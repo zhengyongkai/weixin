@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="55px" height="44px" viewBox="0 0 55 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon / TabBar-Contacts-Outline</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="iPhone-SE---English" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="WeChat---Contacts-EN" transform="translate(-212.000000, -1054.000000)" fill="#27B24A">
+            <g id="TabBar-Contacts-Active" transform="translate(0.000000, 1037.000000)">
+                <g id="Contacts-+-TabBar-Contacts-Outline" transform="translate(196.000000, 17.000000)">
+                    <g id="Icon-/-TabBar-Contacts-Green" transform="translate(16.000000, 0.000000)">
+                        <path d="M29.1111111,25.6666667 C29.111112,25.3901978 29.111112,24.8323364 29.1111111,24.4444444 C29.7720361,24.2908195 30.3852727,23.0529384 31.6666667,22 C34.2846297,19.1743258 35.6974027,15.9775865 35.5,12.2222222 C35.6974027,5.56129991 30.4603101,0 24,0 C17.5396472,0 12.3025546,5.56129991 12.5,12.2222222 C12.3025546,15.9775865 13.7153276,19.1743258 16.3333333,22 C17.6146846,23.0529384 18.2279212,24.2908195 18.8888889,24.4444444 C18.8888887,24.9932861 18.9832147,25.3353271 18.8888889,25.6666667 C14.5821389,32.230122 2.05995034,34.4187153 1,39.1111111 C0.960264396,40.2195262 0.766202171,43.8390759 2.27777778,44 C3.56975445,43.8390759 44.4302028,43.8390759 45.7222222,44 C47.2337551,43.8390759 47.0396929,40.2195262 47,39.1111111 C45.940007,34.4187153 33.4191122,32.230122 29.1111111,25.6666667 Z" id="person"></path>
+                        <rect id="Rectangle-166" x="40" y="13" width="15" height="3"></rect>
+                        <rect id="Rectangle-166-Copy" x="43" y="21" width="12" height="3"></rect>
+                        <rect id="Rectangle-166-Copy-2" x="46" y="29" width="9" height="3"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
