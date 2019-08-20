@@ -9,8 +9,10 @@ import './style/public.scss';
 import './icons';
 import Icon from 'vue-svg-icon/Icon.vue' //引入
 import axios from 'axios'
+import ScrollFlipPage from 'scroll-flip-page'
 
-
+// register globally
+Vue.component(ScrollFlipPage)
 Vue.component('icon', Icon) //注册
 Vue.config.productionTip = false
 Vue.prototype.axios = axios

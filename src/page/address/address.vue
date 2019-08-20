@@ -41,7 +41,7 @@
                         <div class="name">公众号</div>
                     </div>
                 </div>
-                <div class="friend">
+                <div class="friend" ref="list">
                     <div>
                         <div class="code">A</div>
                         <div class="item">
@@ -68,14 +68,14 @@
                         </div>
                     </div>
                     <div>
-                        <div class="code">x</div>
+                        <div class="code">X</div>
                         <div class="item">
                             <div><img src="../../img/user.jpg"/></div>
                              <div class="name">郑永楷</div>
                         </div>
                     </div>
                     <div>
-                        <div class="code">y</div>
+                        <div class="code">Y</div>
                         <div class="item">
                             <div><img src="../../img/user.jpg"/></div>
                              <div class="name">郑永楷</div>
@@ -85,50 +85,49 @@
                          173位联系人
                      </div>
                      <div>
-                         <ul class="list">
-                            <li>A</li>
-                            <li>B</li>
-                            <li>C</li>
-                            <li>D</li>
-                            <li>E</li>
-                            <li>F</li>
-                            <li>G</li>
-                            <li>H</li>
-                            <li>J</li>
-                            <li>K</li>
-                            <li>L</li>
-                            <li>M</li>
-                            <li>N</li>
-                            <li>O</li>
-                            <li>P</li>
-                            <li>Q</li>
-                            <li>R</li>
-                            <li>S</li>
-                            <li>T</li>
-                            <li>U</li>
-                            <li>V</li>
-                            <li>W</li>
-                            <li>X</li>
-                            <li>Y</li>
-                            <li>Z</li>
-                            <li>#</li>
+                         <ul class="list" >
+                            <li v-for="(value, index) in code" @click="choose(value,index)" :class="[index==rindex?'fontcolor':'']">{{value}}</li>
                          </ul>
                      </div>
                 </div>
             </div>
-           
         </div>
-        
+       
     </div>
 </template>
 
 <script>
+import ScrollFlipPage from 'scroll-flip-page'
 export default {
   name: 'HelloWorld',
   data () {
     return {
-     
+        code:['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','#'],
+        rindex:-1
     }
+  },
+  methods:{
+      choose(value,index){
+        //dom需要异步渲染
+        this.$nextTick(() =>{
+            console.log(this.$refs.list);
+            var data=this.$refs.list.getElementsByClassName("code");
+            
+            for(var item of data){
+                console.log(item)
+                if(item.innerHTML==value){
+                    this.rindex=index;
+                }
+            }
+        })
+         //console.log(data)
+      },
+      fetch(){
+           
+      },
+      check(){
+          
+      }
   }
 }
 </script>
@@ -273,7 +272,13 @@ export default {
                top:7rem;
                font-weight: bold;
                font-size: 0.69rem;
+               .fontcolor{
+                  
+                  color: lightgreen;
+                  
+               }
                li{
+                    
                    padding:0.12rem 0;
                }
            }

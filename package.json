@@ -10,6 +10,9 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "finger-mover": "^1.4.3",
+    "scroll-flip-page": "^1.1.1",
+    "simulation-scroll-y": "^1.4.3",
     "svg-sprite-loader": "^4.1.6",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
