@@ -15,6 +15,9 @@
                 </div>
             </div>
             <div class="computer" v-if="true">
+                <svg fill="#000" class="icon">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#computer"></use>
+                </svg>
                 <div class="text">Windows 微信已登录,手机通知关闭</div>
             </div>
             <div class="items" v-for="count in 10">
@@ -31,13 +34,14 @@
                         <div class="chat">[动画表情]</div>
                     </div>
                     <div class="right">
-                        <div class="time">12:00</div>
+                        <div class="time">下午12:00</div>
                         <div class="num"><svg-icon icon-class="unotice" v-if="count%3==0"  /></div> 
                     </div>
                 </div>
                 
             </div>
         </div>
+     
     </div>
 </template>
 
@@ -112,14 +116,20 @@ export default {
         }
     }
     .computer{
-        
+        position: relative;
         height:2.5rem;
         padding: 0 0.94rem;
       
-        
+        .icon{
+           width: 2rem;
+            height: 2rem;
+        }
         .text{
-            @include fontStyle(0.9rem,2.5rem);
-            
+            position: absolute;
+            @include fontStyle(0.9rem,2rem);
+            top:0;
+            left:4rem;
+
             
         }
     }

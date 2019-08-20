@@ -8,10 +8,12 @@ import './config/rem';
 import './style/public.scss';
 import './icons';
 import Icon from 'vue-svg-icon/Icon.vue' //引入
- 
+import axios from 'axios'
+
+
 Vue.component('icon', Icon) //注册
 Vue.config.productionTip = false
-
+Vue.prototype.axios = axios
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

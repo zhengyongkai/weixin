@@ -4,6 +4,8 @@ import HelloWorld from '@/components/HelloWorld'
 import Register from '@/page/register/register';
 import Top from '@/components/tab/top';
 import Chat from '@/page/chat/chat';
+import ChatMessage from '@/page/chat/chatmessage/chatmessage';
+import Address  from '@/page/address/address';
 Vue.use(Router)
 
 export default new Router({
@@ -19,8 +21,21 @@ export default new Router({
 
     },{
       path: '/chat',
-      name: 'chat',
-      component: Chat
+      component: Chat,
+      children: [
+				{
+					path: '/chat/chatmessage',
+					component: ChatMessage,
+				}
+			]
+
+    },
+    {
+      path: '/address',
+      component: Address,
+      name:"通讯录"
+      
+
     }
   ]
 })
