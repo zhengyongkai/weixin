@@ -6,6 +6,7 @@ import Top from '@/components/tab/top';
 import Chat from '@/page/chat/chat';
 import ChatMessage from '@/page/chat/chatmessage/chatmessage';
 import Address  from '@/page/address/address';
+import Find from '@/page/find/find';
 Vue.use(Router)
 
 export default new Router({
@@ -34,6 +35,13 @@ export default new Router({
       path: '/address',
       component: Address,
       name:"通讯录"
+      
+
+    },
+    {
+      path: '/find',
+      component: Find,
+      name:"发现"
       
 
     }

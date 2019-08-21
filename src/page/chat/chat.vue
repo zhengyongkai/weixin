@@ -15,9 +15,9 @@
                 </div>
             </div>
             <div class="computer" v-if="true">
-                <svg fill="#000" class="icon">
+                <!-- <svg fill="#000" class="icon">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#computer"></use>
-                </svg>
+                </svg> -->
                 <div class="text">Windows 微信已登录,手机通知关闭</div>
             </div>
             <div class="items" v-for="count in 10">
@@ -128,7 +128,7 @@ export default {
             position: absolute;
             @include fontStyle(0.9rem,2rem);
             top:0;
-            left:4rem;
+            // left:4rem;
 
             
         }

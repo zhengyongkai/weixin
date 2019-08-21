@@ -52,6 +52,26 @@
                             <div><img src="../../img/user.jpg"/></div>
                              <div class="name">郑永楷1</div>
                         </div>
+                         <div class="item">
+                            <div><img src="../../img/user.jpg"/></div>
+                             <div class="name">郑永楷1</div>
+                        </div>
+                         <div class="item">
+                            <div><img src="../../img/user.jpg"/></div>
+                             <div class="name">郑永楷1</div>
+                        </div>
+                         <div class="item">
+                            <div><img src="../../img/user.jpg"/></div>
+                             <div class="name">郑永楷1</div>
+                        </div>
+                         <div class="item">
+                            <div><img src="../../img/user.jpg"/></div>
+                             <div class="name">郑永楷1</div>
+                        </div>
+                         <div class="item">
+                            <div><img src="../../img/user.jpg"/></div>
+                             <div class="name">郑永楷1</div>
+                        </div>
                     </div>
                      <div>
                         <div class="code">B</div>
@@ -66,6 +86,10 @@
                             <div><img src="../../img/user.jpg"/></div>
                              <div class="name">郑永楷</div>
                         </div>
+                         <div class="item">
+                            <div><img src="../../img/user.jpg"/></div>
+                             <div class="name">郑永楷</div>
+                        </div>
                     </div>
                     <div>
                         <div class="code">X</div>
@@ -77,6 +101,46 @@
                     <div>
                         <div class="code">Y</div>
                         <div class="item">
+                            <div><img src="../../img/user.jpg"/></div>
+                             <div class="name">郑永楷</div>
+                        </div>
+                         <div class="item">
+                            <div><img src="../../img/user.jpg"/></div>
+                             <div class="name">郑永楷</div>
+                        </div>
+                         <div class="item">
+                            <div><img src="../../img/user.jpg"/></div>
+                             <div class="name">郑永楷</div>
+                        </div>
+                         <div class="item">
+                            <div><img src="../../img/user.jpg"/></div>
+                             <div class="name">郑永楷</div>
+                        </div>
+                         <div class="item">
+                            <div><img src="../../img/user.jpg"/></div>
+                             <div class="name">郑永楷</div>
+                        </div>
+                         <div class="item">
+                            <div><img src="../../img/user.jpg"/></div>
+                             <div class="name">郑永楷</div>
+                        </div>
+                         <div class="item">
+                            <div><img src="../../img/user.jpg"/></div>
+                             <div class="name">郑永楷</div>
+                        </div>
+                         <div class="item">
+                            <div><img src="../../img/user.jpg"/></div>
+                             <div class="name">郑永楷</div>
+                        </div>
+                         <div class="item">
+                            <div><img src="../../img/user.jpg"/></div>
+                             <div class="name">郑永楷</div>
+                        </div>
+                         <div class="item">
+                            <div><img src="../../img/user.jpg"/></div>
+                             <div class="name">郑永楷</div>
+                        </div>
+                         <div class="item">
                             <div><img src="../../img/user.jpg"/></div>
                              <div class="name">郑永楷</div>
                         </div>
@@ -98,6 +162,7 @@
 
 <script>
 import ScrollFlipPage from 'scroll-flip-page'
+import {getScrollTop,getScrollHeight,getWindowHeight} from '../../config/utils';
 export default {
   name: 'HelloWorld',
   data () {
@@ -110,13 +175,17 @@ export default {
       choose(value,index){
         //dom需要异步渲染
         this.$nextTick(() =>{
-            console.log(this.$refs.list);
             var data=this.$refs.list.getElementsByClassName("code");
             
             for(var item of data){
-                console.log(item)
+                 
                 if(item.innerHTML==value){
                     this.rindex=index;
+                     //console.log(getScrollTop()+getWindowHeight())
+                      clearTimeout(timer);
+                      let timer=setTimeout(function () {
+                          //滚动事件 未完待续...
+                    }, 100);
                 }
             }
         })
@@ -267,6 +336,7 @@ export default {
            }
 
            .list{
+               z-index:999;
                position: fixed;
                right:0.28rem;
                top:7rem;
