@@ -10,61 +10,23 @@
         </div>
         <div class="content">
            <div class="chat">
-                <div style="text-align:center">--------你和...正在聊天-------</div>
+                
+                <div style="text-align:center">--------你和蔡梓敏正在聊天-------</div>
                 <br>
-                <div class="recevice">
-                    <div class="item">
+                <div class="recevice" v-for="(value,index) in chat">
+                    <div class="time">{{index}}</div>
+                    <div :class="indexs=='czm'?'item':'ritem'" v-for="(values,indexs) in value">
                       <img src="../../../img/user.jpg" class="img"/>
                       <div>
                           <svg class="svgs">
-                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href='#trigon-left'></use>
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" :xlink:href="indexs=='zyk'?'#trigon-right':'#trigon-left'"></use>
                           </svg>
                         <div class="text">
-                          你他吗打球真想蔡徐坤
+                            {{values}}
                         </div>
                       </div>
                     </div>
-                     <div class="item">
-                      <img src="../../../img/user.jpg" class="img"/>
-                      <div>
-                          <svg class="svgs">
-                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href='#trigon-left'></use>
-                          </svg>
-                        <div class="text">
-                          你他吗打球真想蔡徐坤,
-                          你他吗打球真想蔡徐坤
-                          你他吗打球真想蔡徐坤
-                          你他吗打球真想蔡徐坤
-                          你他吗打球真想蔡徐坤
-                        </div>
-                      </div>
-                    </div>
-                     <div class="item">
-                      <img src="../../../img/user.jpg" class="img"/>
-                      <div>
-                          <svg class="svgs">
-                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href='#trigon-left'></use>
-                          </svg>
-                        <div class="text">
-                          你他吗打球真想蔡徐坤,
-                          你他吗打球真想蔡徐坤
-                          你他吗打球真想蔡徐坤
-                          你他吗打球真想蔡徐坤
-                          你他吗打球真想蔡徐坤
-                        </div>
-                      </div>
-                    </div>
-                     <div class="ritem">
-                      <img src="../../../img/me.jpg" class="img"/>
-                      <div>
-                          <svg class="svgs">
-                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href='#trigon-right'></use>
-                          </svg>
-                        <div class="text">
-                          你全家都是蔡徐坤
-                        </div>
-                      </div>
-                    </div>
+                    
                 </div>
            </div>
         </div>  
@@ -75,11 +37,26 @@
 </template>
 
 <script>
+import chat from "../../../config/Data/chat.js";
 export default {
   name: 'HelloWorld',
   data () {
     return {
-     
+       chat:{
+            "2018-5-6 12:00":{
+                "zyk":"在吗 宝贝",
+                "czm":"在 亲爱的老公"
+            },
+            "2018-5-6 12:08":{
+                "zyk":"你在干嘛",
+                "zyk":"有空帮我拿下快递"
+            },
+            "2018-5-6 12:06":{
+                "zyk":"?",
+                "czm":"好的 我晚点去拿"
+            },
+
+        }
     }
   }
 }
@@ -154,7 +131,12 @@ body,html{
       position: absolute;
       top:3rem;
       width: 100%;
-      
+      .time{
+          text-align: center;
+          margin-bottom: 0.5rem;
+          font-size: 0.85rem;
+          color: #666;
+      }
       .chat{
         padding:0 .76rem;
       }
