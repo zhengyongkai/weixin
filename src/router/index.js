@@ -7,6 +7,7 @@ import Chat from '@/page/chat/chat';
 import ChatMessage from '@/page/chat/chatmessage/chatmessage';
 import Address  from '@/page/address/address';
 import Find from '@/page/find/find';
+import Me from  '@/page/me/me';
 Vue.use(Router)
 
 export default new Router({
@@ -23,27 +24,25 @@ export default new Router({
     },{
       path: '/chat',
       component: Chat,
-      children: [
-				{
-					path: '/chat/chatmessage',
-					component: ChatMessage,
-				}
-			]
-
+    },
+    {
+      path: '/chatmessage',
+      component: ChatMessage,
     },
     {
       path: '/address',
       component: Address,
       name:"通讯录"
-      
-
     },
     {
       path: '/find',
       component: Find,
       name:"发现"
-      
-
+    },
+    {
+      path: '/me',
+      component: Me,
+      name:"我"
     }
   ]
 })

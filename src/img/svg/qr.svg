@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="34px" height="35px" viewBox="0 0 34 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon / QR</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="发现-copy" transform="translate(-648.000000, -230.000000)" fill="#A6A6A6">
+            <g id="Icon-/-QR" transform="translate(648.000000, 231.000000)">
+                <path d="M22,15 L19,15 L19,12 L22,12 L22,15 Z M31,3.001 L31,0 L34.001,0 L34.001,3.001 L31,3.001 Z M31,22.001 L31,19 L34.001,19 L34.001,22.001 L31,22.001 Z M19,34 L19,31 L22,31 L22,34 L19,34 Z M6,28 L3,28 L3,25 L6,25 L6,28 Z M0,25 L0,19 L3,19 L3,25 L0,25 Z M0,34 L0,28 L3,28 L3,34 L0,34 Z" id="Fill-1"></path>
+                <path d="M0,15 L15,15 L15,0 L0,0 L0,15 Z M3,3 L12,3 L12,12 L3,12 L3,3 Z" id="Fill-8"></path>
+                <path d="M12,25 L15.0007,25 L15.0007,31 L12.9997,31 L11.9997,31 L11.9997,34 L6.0007,34 L6.0007,31 L8.9997,31 L8.9997,28 L11.9997,28 L11.9997,25 L9,25 L9,22 L6,22 L6,19 L15,19 L15,22 L12,22 L12,25 Z M27.9999,3.0004 L30.9999,3.0004 L30.9999,6.0004 L33.9999,6.0004 L33.9999,12.0004 L31,12.0004 L31,15 L28,15 L25,15 L25,12 L22,12 L22,9 L25,9 L28,9 L28,12 L30.9999,12 L30.9999,8.9994 L29.9999,8.9994 L27.9999,8.9994 L27.9999,3.0008 L21.9999,3.0008 L21.9999,5.9998 L18.9999,5.9998 L18.9999,3.0008 L18.9999,-0.0002 L27.9999,-0.0002 L27.9999,3.0004 Z M9,9 L6,9 L6,6 L9,6 L9,9 Z M22,19 L28,19 L28,23 L28,25 L28,28 L25,28 L25,25 L22,25 L22,28 L19,28 L19,22 L22,22 L22,19 Z M31,28 L34.001,28 L34.001,34 L28,34 L28,31.001 L31,31.001 L31,28 Z" id="Fill-9"></path>
+            </g>
+        </g>
+    </g>
+</svg>
