@@ -30,18 +30,18 @@
                 </div>
            </div>
         </div>  
-        <div class="footer">
+        <div :class="bottom_ext==false?'footer':'footer bottom'">
             <div class="contents">
                 <svg class="svg_v">
                   <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#voice"></use>
                 </svg>
-                <textarea class="svg_input" size="20"  @keyup.enter="send($event)" v-model="input_t" />
+               
                 <div class="svg_o">
                      <svg  class="face">
                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#face"></use>
                       </svg>
-                      <svg  class="addthing">
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#addthing"></use>
+                      <svg  class="addthing" @click="this.bottom_show">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#addthing" ></use>
                       </svg>
                 
                 </div>
@@ -157,7 +157,8 @@ export default {
             },
 
         },
-        input_t:""
+        input_t:"",
+        bottom_ext:false
     }
   },
   methods:{
@@ -167,6 +168,9 @@ export default {
       event.preventDefault();
 
       event.stopPropagation();
+    },
+    bottom_show(){
+      this.bottom_ext=true
     }
   }
 }
@@ -327,11 +331,16 @@ body,html{
     
 
     }
+
+      .bottom{
+        bottom:16rem !important;
+        transition: all .2s;
+      }
       .footer{
 
-           z-index: 10;
+          z-index: 10;
           position: fixed;
-          bottom:16rem;
+          bottom: 0;
           height:3.06rem;
           background: rgba(246, 246, 246, 1);
           width: 100%;
@@ -340,13 +349,13 @@ body,html{
          
 
           .items_o{
-            height:17rem;
+            height:16rem;
             
             background: rgba(246, 246, 246, 1);
             flex-wrap: wrap;
             bottom: 0;
             display: flex;
-           justify-content: center; 
+            justify-content: center; 
           
            
             padding:1.408rem 1.1946666667rem 0;
@@ -364,16 +373,17 @@ body,html{
                 margin:0 auto;
                 background: #fff;
                 border-radius: 0.31rem;
-                     
-                   height:3.8rem;;
-                    width: 3.8rem;
+                display:flex;
+                justify-content: center;
+								align-items:center;
+                height:3.8rem;;
+                width: 3.8rem;
                   
                     
                   
               }
               .svg_p{
-                text-align: center;
-                margin: 0.95rem;
+               display: block;
                 width: 1.9rem;
                 height: 1.39rem;
               }
@@ -393,7 +403,7 @@ body,html{
           .contents{
                height:3.06rem;
               padding: 0.56rem 0.69rem;
-              border-bottom: 0.1rem solid rgba(220, 220, 220, 1);
+              border-bottom: 0.01rem solid rgba(220, 220, 220, 1);
               .svg_v,.svg_o{
                 padding: 0.2rem 0;
               }
