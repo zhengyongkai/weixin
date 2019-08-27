@@ -4,25 +4,25 @@
             <div class="top_content" >
               <svg-icon icon-class="goback" class="goback"/>
               <div class="num"><u>100</u></div>
-              <div class="text"><b>文件传输助手</b></div>
+              <div class="text"><b>蔡梓敏</b></div>
               <svg-icon icon-class="other" class="other"/>
             </div>
         </div>
-        <div class="content">
+        <div class="content" @click="this.removeother" ref="list">
            <div class="chat">
                 
                 <div style="text-align:center">--------你和蔡梓敏正在聊天-------</div>
                 <br>
                 <div class="recevice" v-for="(value,index) in chat">
                     <div class="time">{{index}}</div>
-                    <div :class="indexs=='czm'?'item':'ritem'" v-for="(values,indexs) in value">
-                      <img src="../../../img/user.jpg" class="img"/>
+                    <div :class="values.name=='czm'?'item':'ritem'" v-for="(values,indexs) in value">
+                      <img src="../../../img/me.jpg" class="img"/>
                       <div>
                           <svg class="svgs">
-                            <use xmlns:xlink="http://www.w3.org/1999/xlink" :xlink:href="indexs=='zyk'?'#trigon-right':'#trigon-left'"></use>
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" :xlink:href="values.name=='czm'?'#trigon-left':'#trigon-right'"></use>
                           </svg>
                         <div class="text">
-                            {{values}}
+                            {{values.content}}
                         </div>
                       </div>
                     </div>
@@ -35,7 +35,7 @@
                 <svg class="svg_v">
                   <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#voice"></use>
                 </svg>
-               
+                <textarea class="svg_input"  @keydown.enter="send" v-model="input_t"/>
                 <div class="svg_o">
                      <svg  class="face">
                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#face"></use>
@@ -123,55 +123,48 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-       chat:{
-            "2018-5-6 12:00":{
-                "zyk":"在吗 宝贝",
-                "czm":"在 亲爱的老公"
-            },
-            "2018-5-6 12:08":{
-                "zyk":"你在干嘛",
-                "zyk":"有空帮我拿下快递"
-            },
-            "2018-5-6 12:10":{
-                "zyk":"?",
-                "czm":"好的 我晚点去拿",
+         chat:{
+            "2018-5-6 12:00":[
+                {name:"zyk",content:"在吗 宝贝"},
+                {name:"czm",content:"在 亲爱的老公"}
+            ],
+            "2018-5-6 12:08":[
+                {name:"zyk",content:"在吗 宝贝"},
+                {name:"czm",content:"在 亲爱的老公"}
+            ],
+            "2018-5-6 12:06":[
+                 {name:"zyk",content:"在吗 宝贝"},
+                {name:"czm",content:"在 亲爱的老公"}
+            ],
+         },
+        
 
-            },"2018-5-6 12:12":{
-                "zyk":"?",
-                "czm":"好的 我晚点去拿",
-
-            },"2018-5-6 12:18":{
-                "zyk":"?",
-                "czm":"好的 我晚点去拿",
-
-            },
-            "2018-5-6 12:20":{
-                "zyk":"?",
-                "czm":"好的 我晚点去拿",
-
-            },
-             "2018-5-6 12:20":{
-                "zyk":"?",
-                "czm":"好的 我晚点去拿ka",
-
-            },
-
-        },
+        
         input_t:"",
         bottom_ext:false
     }
   },
   methods:{
     send(event){
-        event.cancelBubble=true;
+      this.chat["2018-5-6 12:06"].push({name:"zyk",content:this.input_t})
+      this.input_t=""
+       this.$nextTick(() =>{
+            var data=this.$refs.list;
+            console.log(data.clientHeight)
+            window.scrollTo(0,this.$refs.list.clientHeight)
+       })  
 
-      event.preventDefault();
-
-      event.stopPropagation();
     },
     bottom_show(){
-      this.bottom_ext=true
+      this.bottom_ext=!this.bottom_ext
+    },
+    removeother(){
+      this.bottom_ext=false
     }
+  },
+  mounted(){
+    
+    
   }
 }
 </script>
@@ -235,6 +228,7 @@ body,html{
            font-size: 1rem;
            width: 100%;
            text-align: center;
+          
         }
       
         .other{
@@ -291,7 +285,8 @@ body,html{
             padding: 0.5rem 0.5rem;
             background:#fff;
             max-width:15rem ;
-            overflow: hidden;
+           word-break: break-all;
+           word-wrap: break-word;
 
 
           }
