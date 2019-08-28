@@ -80,7 +80,7 @@ export default {
         height: 3rem;   
         background: #ebebeb;
         padding:  0 0.81rem;
-        z-index: 999;
+        z-index: 100;
      
         
         .text{

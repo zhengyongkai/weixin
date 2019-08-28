@@ -8,6 +8,7 @@ import ChatMessage from '@/page/chat/chatmessage/chatmessage';
 import Address  from '@/page/address/address';
 import Find from '@/page/find/find';
 import Me from  '@/page/me/me';
+import Chatitem from '@/components/chatitem/chatitem';
 Vue.use(Router)
 
 export default new Router({
@@ -43,6 +44,9 @@ export default new Router({
       path: '/me',
       component: Me,
       name:"我"
+    },{
+      path:'/chatitem',
+      conponent:Chatitem
     }
   ]
 })

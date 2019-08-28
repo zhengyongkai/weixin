@@ -107,7 +107,7 @@ export default {
         text-align: center;
         line-height: 3rem;
         color:#000;
-        z-index: 999;
+        z-index: 100;
    }
    .content{
        position: relative;

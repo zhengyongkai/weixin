@@ -1,6 +1,5 @@
 <template>
     <div>
-      
         <div class="top">
             <div class="text">
                 <!-- <div class="back">返回</div> -->
@@ -209,12 +208,8 @@ export default {
         height: 3rem;   
         background: #ebebeb;
         padding:  0 0.81rem;
-        z-index: 999;
-     
-        
+        z-index: 100;
         .text{
-            
-            
              width: 100%;
              @include fontStyle(1rem,3rem);
              font-family: "Microsoft YaHei";
