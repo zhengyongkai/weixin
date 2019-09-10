@@ -22,7 +22,8 @@
       <div class="items">
         <div class="item">
           <div>
-            <div><img src="../../../img/bg.jpg" /></div>
+            <div><img src="../../../img/bg.jpg"
+                   class="user_img" /></div>
             <div class="user_name">懒懒的兔子</div>
             <div class="ccontent">
               今天也是一只精致懒懒的小兔兔
@@ -38,7 +39,8 @@
           </div>
         </div>
         <div class="item">
-          <div><img src="../../../img/bg.jpg" /></div>
+          <div><img src="../../../img/bg.jpg"
+                 class="user_img" /></div>
           <div class="user_name">懒懒的兔子</div>
           <div class="ccontent">
             今天也是一只精致懒懒的小兔兔,小兔兔傻傻的,笨笨的，哼\n\r
@@ -57,10 +59,45 @@
         </div>
         <div class="item">
           <div>
-            <div><img src="../../../img/bg.jpg" /></div>
+            <div><img src="../../../img/bg.jpg"
+                   class="user_img" /></div>
             <div class="user_name">懒懒的兔子</div>
             <div class="ccontent">
-              今天也是一只精致懒懒的小兔兔
+              <div v-if="img!=''">
+
+                <div v-for="  i in img"
+                     class="img_content">
+                  <img :class="img.length==1?'img':'imgs'"
+                       :src=i />
+                </div>
+              </div>
+            </div>
+            <div class="cbottom">
+              <div class="time">1小时前</div>
+              <div class="cother">
+                <svg-icon icon-class="other"
+                          class="other"
+                          fill="#fff" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div>
+            <div><img src="../../../img/bg.jpg"
+                   class="user_img" /></div>
+            <div class="user_name">懒懒的兔子</div>
+            <div class="ccontent">
+              <div v-if="img!=''">
+
+                <div v-for="(i,index) in img"
+                     class="img_content"
+                     v-if="index==1">
+
+                  <img :class="index==1?'img':'imgs'"
+                       :src=i />
+                </div>
+              </div>
             </div>
             <div class="cbottom">
               <div class="time">1小时前</div>
@@ -83,6 +120,8 @@ export default {
   name: 'friendcircle',
   data () {
     return {
+
+      img: ["../../../static/images/bg.jpg", '../../../static/images/bg1.jpg', '../../../static/images/bg1.jpg', '../../../static/images/bg1.jpg']
 
     }
   }
@@ -191,7 +230,7 @@ body {
       min-height: 6rem;
       width: 100%;
       border-bottom: 1px solid rgba(223, 223, 221, 1);
-      img {
+      .user_img {
         width: 3rem;
         height: 3rem;
         border-radius: 0.5rem;
@@ -215,6 +254,18 @@ body {
         line-height: 1.5rem;
         color: #000;
       }
+      .img_content {
+        display: inline-block;
+        .img {
+          width: 15rem;
+          height: 15rem;
+        }
+        .imgs {
+          width: 6rem;
+          height: 6rem;
+        }
+      }
+
       .cbottom {
         padding: 0.5rem 0;
 
