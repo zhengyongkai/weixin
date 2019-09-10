@@ -3,37 +3,37 @@
 
     <div class="chatitem"
          v-for="count in 10">
-      <div class="item"
-           @touchmove='touchMove'
-           @touchstart='touchStart'
-           @touchend='touchend'
-           :style="deleteS">
-        <div class="img"><img src="../../img/user.jpg" />
-          <span class="spot"
-                v-if="count%3==0"> </span>
-          <span class="spot_w"
-                v-if="count%3==1">{{count}}</span>
-          <span v-if="count%3==2"></span>
-        </div>
-        <div class="content">
-          <div class="name">
-            <b>郑永楷</b>
+      <div class="item">
+        <div @touchmove.stop.prevent='touchMove'
+             @touchstart.stop.prevent='touchStart'
+             @touchend.stop.prevent='touchend'>
+          <div class="img"><img src="../../img/user.jpg" />
+            <span class="spot"
+                  v-if="count%3==0"> </span>
+            <span class="spot_w"
+                  v-if="count%3==1">{{count}}</span>
+            <span v-if="count%3==2"></span>
           </div>
-          <div class="chat">[动画表情]</div>
-        </div>
-        <div class="right">
-          <div class="time">下午12:00</div>
-          <div class="num">
-            <svg-icon icon-class="unotice"
-                      v-if="count%3==0" />
+          <div class="content">
+            <div class="name">
+              <b>郑永楷</b>
+            </div>
+            <div class="chat">[动画表情]</div>
           </div>
-        </div>
-        <div class="handle">
-          <div class="notice">
-            标位未读
+          <div class="right">
+            <div class="time">下午12:00</div>
+            <div class="num">
+              <svg-icon icon-class="unotice"
+                        v-if="count%3==0" />
+            </div>
           </div>
-          <div class="delete">
-            删除
+          <div class="handle">
+            <div class="notice">
+              标位未读
+            </div>
+            <div class="delete">
+              删除
+            </div>
           </div>
         </div>
       </div>
@@ -47,29 +47,41 @@ export default {
   name: 'chatitem',
   data () {
     return {
-      deleteS: ""
+      deleteS: "",
+      startx: '',
     }
   },
   methods: {
     touchStart (e) {
-      console.log(e.touches[0].clientX)
+      // console.log(e.touches[0].clientX)
+      this.startx = e.touches[0].clientX
+
+
+
     }
     ,
     touchMove (e) {
-      //console.log(e)
-      // e.preventDefault();
-      // if (e.touches["0"].clientX > 0) {
-      //   this.deleteS = "transform:translateX(" + (Math.round(e.touches["0"].clientX) / 50) + "rem)";
-      // }
+      //console.log(e.touches["0"].clientX);
+      var position = this.startx - e.touches["0"].clientX
+
+      // console.log(e.touches[0].clientX)
+      // console.log(this.startx - e.touches["0"].clientX)
+      // // e.preventDefault();
+      // this.deleteS = "transform:translateX(" + (Math.floor(e.touches["0"].clientX) / 50) + "rem)";
+
     },
     touchend (e) {
+      //console.log(e.changedTouches[0].clientX)
       // console.log(e.touches[0].clientX)
+      // this.deleteS = this.startX - e.changedTouches[0].clientX;
     }
   }
 }
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
+.chatitem {
+}
 .item {
   position: relative;
   padding: 0.63rem 0.66rem;

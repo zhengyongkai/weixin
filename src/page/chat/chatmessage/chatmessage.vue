@@ -219,7 +219,6 @@ html {
   color: #000;
   z-index: 100;
   right: 0;
-
   top: 0;
   left: 0;
   .top_content {

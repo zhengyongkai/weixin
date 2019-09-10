@@ -8,6 +8,7 @@ import ChatMessage from '@/page/chat/chatmessage/chatmessage'
 import Address from '@/page/address/address'
 import Find from '@/page/find/find'
 import Me from '@/page/me/me'
+import FriendCircle from '@/page/find/friendcircle/friendcircle'
 import Chatitem from '@/components/chatitem/chatitem'
 Vue.use(Router)
 
@@ -49,6 +50,10 @@ export default new Router({
     {
       path: '/chatitem',
       component: Chatitem
+    },
+    {
+      path: '/friendcircle',
+      component: FriendCircle
     }
   ]
 })
